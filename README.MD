@@ -1,5 +1,5 @@
 # Moviepy Homework
-David Galvis
-Juan Estrada
-Diego Lopez
-Juan Pinzon
+David Galvis  
+Juan Estrada  
+Diego Lopez  
+Juan Pinzon  

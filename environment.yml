@@ -1,0 +1,12 @@
+name: moviepy_homework
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - numpy
+  - imagemagick
+  - pip
+  - pip:
+      - moviepy==1.0.3
+      - ffmpeg
+      - notebook

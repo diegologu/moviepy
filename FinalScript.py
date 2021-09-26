@@ -1,0 +1,18 @@
+import moviepy.editor as mpy
+
+clip1_speed = mpy.VideoFileClip("input/messi_chikito.mp4", audio=True).fx(mpy.vfx.speedx, 2.0)
+clip2_volume = mpy.VideoFileClip("input/messi_hazlo.mp4", audio=True, verbose=True).volumex(3.0)
+clip1 = clip1_speed.margin(10)
+clip2 = clip2_volume.margin(10)
+array_clip = mpy.clips_array([[clip1, clip2]])
+txt = mpy.TextClip('Messi', font='Courier',fontsize=120, color='white', bg_color='gray35')
+txt = txt.set_position(('center', 0.6), relative=True)
+txt = txt.set_start((0, 1)) # (min, s)
+txt = txt.set_duration(3)
+txt = txt.set_opacity(0.5)
+txt = txt.crossfadein(0.5)
+txt = txt.crossfadeout(0.5)
+text_clip = mpy.CompositeVideoClip([array_clip, txt])
+credits = mpy.VideoFileClip("input/credits.mp4")
+final = mpy.concatenate_videoclips([text_clip,credits])
+final.write_videofile("output/FinalVideo.mp4")
